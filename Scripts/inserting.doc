@@ -1,0 +1,82 @@
+INSERT INTO Passenger VALUES
+(1,'John','Smith','john@gmail.com','0788000001','PA12345',DATE '1995-05-12');
+
+INSERT INTO Passenger VALUES
+(2,'Alice','Brown','alice@gmail.com','0788000002','PA12346',DATE '1998-10-20');
+
+INSERT INTO Passenger VALUES
+(3,'David','Wilson','david@gmail.com','0788000003','PA12347',DATE '1992-08-14');
+
+
+INSERT INTO Aircraft VALUES (1,'Boeing 737',180,'Boeing');
+INSERT INTO Aircraft VALUES (2,'Airbus A320',160,'Airbus');
+
+
+INSERT INTO Airport VALUES (1,'Kigali International Airport','Kigali','Rwanda');
+INSERT INTO Airport VALUES (2,'Jomo Kenyatta International Airport','Nairobi','Kenya');
+INSERT INTO Airport VALUES (3,'Entebbe International Airport','Entebbe','Uganda');
+
+
+INSERT INTO Flight VALUES
+(1,'WB101',1,1,2,
+TO_DATE('2026-08-01 08:00','YYYY-MM-DD HH24:MI'),
+TO_DATE('2026-08-01 09:30','YYYY-MM-DD HH24:MI'),
+'Scheduled');
+
+INSERT INTO Flight VALUES
+(2,'WB202',2,2,3,
+TO_DATE('2026-08-02 10:00','YYYY-MM-DD HH24:MI'),
+TO_DATE('2026-08-02 11:45','YYYY-MM-DD HH24:MI'),
+
+ INSERT INTO Seat VALUES (1,1,'12A','Economy');
+INSERT INTO Seat VALUES (2,1,'1A','Business');
+INSERT INTO Seat VALUES (3,2,'15C','Economy');
+
+
+ INSERT INTO Booking VALUES
+(1,1,1,SYSDATE,'Confirmed',350);
+
+INSERT INTO Booking VALUES
+(2,2,2,SYSDATE,'Pending',420);
+
+INSERT INTO Booking VALUES
+(3,3,1,SYSDATE,'Confirmed',350);
+
+INSERT INTO Ticket VALUES
+(1,1,1,'TK1001',SYSDATE,350);
+
+INSERT INTO Ticket VALUES
+(2,2,3,'TK1002',SYSDATE,420);
+
+INSERT INTO Ticket VALUES
+(3,3,2,'TK1003',SYSDATE,350);
+
+
+ INSERT INTO Payment VALUES
+(1,1,350,SYSDATE,'Credit Card','Paid');
+
+INSERT INTO Payment VALUES
+(2,2,420,SYSDATE,'Mobile Money','Pending');
+
+INSERT INTO Payment VALUES
+(3,3,350,SYSDATE,'Cash','Paid');
+
+ INSERT INTO Employee VALUES
+(1,'James Mwangi','Administrator');
+
+INSERT INTO Employee VALUES
+ (2,'Sarah Uwase','Booking Officer');
+
+INSERT INTO Employee VALUES
+(3,'Peter Niyonzima','Flight Manager');
+
+ INSERT INTO public_holiday VALUES (seq_holiday.NEXTVAL, TO_DATE('2026-01-01','YYYY-MM-DD'), 'New Year');
+INSERT INTO public_holiday VALUES (seq_holiday.NEXTVAL, TO_DATE('2026-07-01','YYYY-MM-DD'), 'Independence Day');
+INSERT INTO public_holiday VALUES (seq_holiday.NEXTVAL, TO_DATE('2026-07-04','YYYY-MM-DD'), 'Liberation Day');
+INSERT INTO public_holiday VALUES (seq_holiday.NEXTVAL, TO_DATE('2026-12-25','YYYY-MM-DD'), 'Christmas Day');
+
+
+
+ 
+
+'Scheduled');
