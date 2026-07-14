@@ -1,0 +1,29 @@
+CREATE OR REPLACE PROCEDURE Book_Flight(
+    p_booking_id NUMBER,
+    p_passenger_id NUMBER,
+    p_flight_id NUMBER,
+    p_amount NUMBER
+)
+IS
+BEGIN
+    INSERT INTO Booking
+    VALUES(
+        p_booking_id,
+        p_passenger_id,
+        p_flight_id,
+        SYSDATE,
+        'Confirmed',
+        p_amount
+    );
+
+    DBMS_OUTPUT.PUT_LINE('Booking created successfully.');
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE(SQLERRM);
+END;
+/
+BEGIN
+    Book_Flight(4,1,2,450);
+END;
+/
