@@ -1,0 +1,12 @@
+CREATE OR REPLACE FUNCTION Calculate_Ticket_Price(
+    p_price NUMBER
+)
+RETURN NUMBER
+IS
+BEGIN
+    RETURN p_price + (p_price * 0.18);
+END;
+/
+
+SELECT Calculate_Ticket_Price(350) AS Total_Price
+FROM dual;
