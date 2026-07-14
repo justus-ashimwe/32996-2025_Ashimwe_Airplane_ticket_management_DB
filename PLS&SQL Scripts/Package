@@ -1,0 +1,54 @@
+CREATE OR REPLACE PACKAGE Flight_Package AS
+
+PROCEDURE Show_Flights;
+
+FUNCTION Total_Bookings
+RETURN NUMBER;
+
+END Flight_Package;
+/
+package body
+CREATE OR REPLACE PACKAGE BODY Flight_Package AS
+
+PROCEDURE Show_Flights IS
+
+BEGIN
+
+FOR r IN
+(SELECT flight_number,status
+FROM Flight)
+
+LOOP
+
+DBMS_OUTPUT.PUT_LINE
+(r.flight_number||' '||r.status);
+
+END LOOP;
+
+END;
+
+FUNCTION Total_Bookings
+RETURN NUMBER
+IS
+
+v_total NUMBER;
+
+BEGIN
+
+SELECT COUNT(*)
+INTO v_total
+FROM Booking;
+
+RETURN v_total;
+
+END;
+
+END Flight_Package;
+/
+run
+BEGIN
+Flight_Package.Show_Flights;
+END;
+/
+SELECT Flight_Package.Total_Bookings
+FROM dual;
