@@ -1,0 +1,13 @@
+CREATE OR REPLACE TRIGGER trg_payment
+AFTER INSERT ON Payment
+FOR EACH ROW
+BEGIN
+    UPDATE Booking
+    SET booking_status='Paid'
+    WHERE booking_id=:NEW.booking_id;
+END;
+/
+test
+INSERT INTO Payment
+VALUES
+(4,4,450,SYSDATE,'Credit Card','Paid');
