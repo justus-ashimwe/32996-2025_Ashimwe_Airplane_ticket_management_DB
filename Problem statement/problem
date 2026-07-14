@@ -1,0 +1,9 @@
+Traditional or manual airline booking systems face several challenges:
+Duplicate bookings 
+Lost passenger records 
+Slow ticket processing 
+Payment errors 
+Poor record management 
+Difficulty generating reports 
+Proposed Solution
+Develop an Oracle Database using PL/SQL to automate airline ticket management.
