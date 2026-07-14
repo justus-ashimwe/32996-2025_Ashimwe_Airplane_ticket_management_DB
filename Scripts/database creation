@@ -1,0 +1,43 @@
+--Create Oracle Database User
+CREATE USER airplane_user IDENTIFIED BY Airplane@123;
+--privilages
+GRANT CREATE SESSION TO airplane_user;
+
+GRANT CREATE TABLE TO airplane_user;
+
+GRANT CREATE VIEW TO airplane_user;
+
+GRANT CREATE SEQUENCE TO airplane_user;
+
+GRANT CREATE PROCEDURE TO airplane_user;
+
+GRANT CREATE TRIGGER TO airplane_user;
+
+GRANT CREATE SYNONYM TO airplane_user;
+
+GRANT UNLIMITED TABLESPACE TO airplane_user;
+---Use the Correct Naming Convention
+
+Use meaningful and consistent names for all database objects.
+
+Object	Naming Convention	Example
+Database User	lowercase	airplane_user
+Tables	Singular with capital first letter	Passenger, Flight, Booking
+Primary Keys	EntityNameID	PassengerID, FlightID
+Foreign Keys	Same as referenced PK	PassengerID, FlightID, BookingID
+Procedures	Verb_Noun	Book_Flight
+Functions	Verb_Noun	Calculate_Ticket_Price
+Triggers	trg_ prefix	trg_payment
+Sequences	seq_ prefix	seq_booking
+Packages	_pkg suffix	flight_pkg
+--Configure Access
+
+Connect to the Oracle database using SQL Developer or SQL*Plus.
+
+Example connection details:
+
+Username: airplane_user
+Password: Airplane@123
+Hostname: localhost
+Port: 1521
+Service Name: FREEPDB1
