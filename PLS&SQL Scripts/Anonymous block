@@ -1,0 +1,20 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+
+v_flight Flight.flight_number%TYPE;
+v_status Flight.status%TYPE;
+
+BEGIN
+
+SELECT flight_number,status
+INTO v_flight,v_status
+FROM Flight
+WHERE flight_id=1;
+
+DBMS_OUTPUT.PUT_LINE('Flight: '||v_flight);
+
+DBMS_OUTPUT.PUT_LINE('Status: '||v_status);
+
+END;
+/
