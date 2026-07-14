@@ -1,0 +1,35 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+
+CURSOR c_passenger IS
+SELECT passenger_id,
+       first_name,
+       last_name
+FROM Passenger;
+
+v_id Passenger.passenger_id%TYPE;
+v_fname Passenger.first_name%TYPE;
+v_lname Passenger.last_name%TYPE;
+
+BEGIN
+
+OPEN c_passenger;
+
+LOOP
+
+FETCH c_passenger
+INTO v_id,v_fname,v_lname;
+
+EXIT WHEN c_passenger%NOTFOUND;
+
+DBMS_OUTPUT.PUT_LINE(v_id||' '
+||v_fname||' '
+||v_lname);
+
+END LOOP;
+
+CLOSE c_passenger;
+
+END;
+/
